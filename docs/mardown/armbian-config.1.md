@@ -89,7 +89,8 @@ header: User Manual
 
 footer: armbian-config 1.0.0
 
-author: Joey Turner, Tearran
-
 date: August 31, 2023
 ...
+
+</body>
+</html>
