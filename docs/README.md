@@ -1,79 +1,81 @@
-With these steps, you can create a comprehensive and informative man page that includes usage examples, tutorials, and additional sections. Adjust the content, sections, and formatting according to specific guidelines.
+# User Manual generation
+Steps To create a comprehensive man page with various sections and formatted content, including usage examples and tutorials, you can follow these steps:
 
 1. **Create Markdown Content:**
    Write the content for your man page in Markdown format, including all the necessary sections, descriptions, usage examples, and tutorials. Make sure to structure the content properly using appropriate Markdown headers (`#`, `##`, `###`, etc.).
 
-   ```markdown
-   # ARMBIAN-CONFIG(1) User Manual
+```markdown
+# ARMBIAN-CONFIG(1) User Manual
 
-   ## NAME
+## NAME
 
-   config - A command line tool for system configuration
+config - A command line tool for system configuration
 
-   ## SYNOPSIS
+## SYNOPSIS
 
-   **config** [ -r | Group | option ]
+**config** [ -r | Group | option ]
 
-   ## DESCRIPTION
+## DESCRIPTION
 
-   The `config` command is a command-line tool for system configuration. It provides a range of options for configuring various aspects of the system...
+The `config` command is a command-line tool for system configuration. It provides a range of options for configuring various aspects of the system...
 
-   ## OPTIONS
+## OPTIONS
 
-   - `-h`: Show the help message.
-   - `-l`: Show a list of available group options.
-   - ...
+- `-h`: Show the help message.
+- `-l`: Show a list of available group options.
+- ...
 
-   ## EXAMPLES
+## EXAMPLES
 
-   To see a list of available desktops to install:
+To see a list of available desktops to install:
 
-   ```shell
-   config install see_desktops
-   ```
 
-   To enable Infrared Remote Control support:
+`config install see_desktops`
 
-   ```shell
-   config iolocal set_lirc
-   ```
 
-   ## SEE ALSO
+To enable Infrared Remote Control support:
 
-   Additional documentation for the config command may be available on your system or online.
-   ```
+
+`config iolocal set_lirc`
+
+
+## SEE ALSO
+
+Additional documentation for the config command may be available on your system or online.
+```
 
 2. **Convert Markdown to Man Page:**
    Use `pandoc` to convert the Markdown content into a formatted man page. You can include metadata and specify the output filename:
 
-   ```bash
-   pandoc --standalone -t man input.md -o output.1
-   ```
+	- `sudo apt updated && sudo apt install pandoc`
+  
+
+	- `pandoc --standalone -t man input.md -o output.1`
+
 
 3. **Add Additional Sections:**
    For more detailed sections like tutorials, additional usage examples, and tutorials, you can use the standard man page sections and headers. Here's an example of how you can add a "TUTORIALS" section:
 
-   ```markdown
-   ## TUTORIALS
+```md
+## TUTORIALS
 
-   ### Setting Up Wireless Network
 
-   To configure a wireless network connection, follow these steps:
+### Setting Up Wireless Network
 
-   1. Run the following command to open the wireless network configuration menu:
+To configure a wireless network connection, follow these steps:
 
-      ```shell
-      config -r wireless
-      ```
+1. Run the following command to open the wireless network configuration menu:
 
-   2. Select the appropriate option to enable or disable wireless interfaces...
+  `config -r wireless`
 
-   ### Advanced Configuration
+2. Select the appropriate option to enable or disable wireless interfaces...
 
-   For advanced system configuration, you can use the following options...
+### Advanced Configuration
 
-   ...
-   ```
+For advanced system configuration, you can use the following options...
+
+...
+```
 
 4. **Generate the Man Page:**
    Run the `pandoc` command again to generate the man page with the additional sections and tutorials:
@@ -88,3 +90,12 @@ With these steps, you can create a comprehensive and informative man page that i
    ```bash
    gzip output.1
    ```
+
+---
+title: ARMBIAN-CONFIG
+section: 1
+header: User Manual
+footer: armbian-config 1.0.0
+author: Joey Turner, Tearran
+date: August 31, 2023
+...
