@@ -48,7 +48,7 @@ Additional documentation for the config command may be available on your system 
    Use `pandoc` to convert the Markdown content into a formatted man page. You can include metadata and specify the output filename:
 
 	- `sudo apt updated && sudo apt install pandoc`
-  
+
 
 	- `pandoc --standalone -t man input.md -o output.1`
 
@@ -93,9 +93,14 @@ For advanced system configuration, you can use the following options...
 
 ---
 title: ARMBIAN-CONFIG
+
 section: 1
+
 header: User Manual
+
 footer: armbian-config 1.0.0
+
 author: Joey Turner, Tearran
+
 date: August 31, 2023
 ...
