@@ -8,27 +8,8 @@
 ---
 See [[Wiki]](https://github.com/Tearran/configng/wiki) for more info.
 
-## Quick start
-### install prebuild
-```bash
-wget https://github.com/Tearran/configng/releases/download/v0.1-alpha/armbian-bookworm-utils-config.0.1.deb ; sudo dpkg -i armbian-bookworm-utils-config.0.1.deb ;
-```
-### Build source.
-```bash
-{
-  # install Git if needed
-  [[ -z $(which git) ]] && sudo apt update && sudo apt install git ;
-  # Clone repo to ~/.loclal/src/
-  git clone https://github.com/Tearran/configng.git ~/.local/src/armbian-utilties ;
-  # build a deb package
-  cd ~/.local/src/armbian-utilties
-  ~/.local/src/armbian-utilties/build.contrib.sh
-  ls "/home/beta/.local/src/armbian-utilties/debs"  
-}
-```
-
 ---
-## Quick use 
+## Useage 
  see list of avalible desptops that can be install via apt
 ```bash
 config -r install see_desktops
@@ -90,7 +71,6 @@ Why Bash? Well, because it's going to be in every distribution. Striped down dis
 may not include Python, C/C++, etc. build/runtime environments 
 
 
-
 ## Coding standards
 [Shell Style Guide](https://google.github.io/styleguide/shellguide.html) has some good ideas, 
 but fundementally look at the code in lib:
@@ -134,7 +114,6 @@ Return values should use stdout:
 # Return value
 printf '%s\n' "$(cat $file)"
 ```
+-->
 
 Only use sudo when needed and never run as root!
-
--->
