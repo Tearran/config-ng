@@ -259,9 +259,9 @@
                     "id": "L01",
                     "description": "Change Locales reconfigure the language and character set",
                     "command": [
-                        	"dpkg-reconfigure locales",
-							"source /etc/default/locale ; sed -i \"s/^LANGUAGE=.*/LANGUAGE=$LANG/\" /etc/default/locale",
-		                    "export LANGUAGE=$LANG"
+			"dpkg-reconfigure locales",
+			"source /etc/default/locale ; sed -i \"s/^LANGUAGE=.*/LANGUAGE=$LANG/\" /etc/default/locale",
+			"export LANGUAGE=$LANG"
                     ],
                     "show": true,
                     "status": "Active",
@@ -273,7 +273,9 @@
                     "id": "L02",
                     "description": "Change Keyboard layout",
                     "command": [
-						"dpkg-reconfigure keyboard-configuration ; setupcon "
+			"dpkg-reconfigure keyboard-configuration ",
+                        "setupcon ",
+                        "update-initramfs -u"
                     ],
                     "show": true,
                     "status": "Active",
